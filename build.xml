@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<project name="RasterizerTask" default="jar" basedir=".">
+
+    <target name="jar">
+        <echo message="RasterizerTask" />
+        
+        <mkdir dir="build" />
+
+        <jar jarfile="build/RasterizerTask.jar" basedir="bin"
+             includes="**/*" 
+            />
+    	
+    	<copy file="build/RasterizerTask.jar" tofile="d:/Jet/Amanda/doc/javancss/RasterizerTask.jar" overwrite="true" />
+    	
+    </target>
+
+</project>
