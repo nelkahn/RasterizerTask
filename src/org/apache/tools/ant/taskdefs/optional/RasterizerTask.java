@@ -676,11 +676,8 @@ public class RasterizerTask extends MatchingTask {
      */
     private String getParserClassName(final String className) {
         String name = className;
-        System.err.println("[RasterizerTask] getParserClassName - " + className);
-        if (name == null) {
-            name = JAXP_PARSER;
-        }
-        if(name.equals(JAXP_PARSER)) {
+        // If className is null treat same way as JAXP parser, this avoids a NullPointerException
+        if (className == null || className.equals(JAXP_PARSER)) {
             // Set first JAXP parser.
             // Throws BuildException.
             final XMLReader reader = JAXPUtils.getXMLReader();
